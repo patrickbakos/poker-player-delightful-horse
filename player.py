@@ -33,7 +33,7 @@ class Player:
         if my_cards_rank[0] == my_cards_rank[1] and community_cards_rank.count(my_cards_rank[0]) == 2\
             or community_cards_rank.count(my_cards_rank[0]) == 3\
             or community_cards_rank.count(my_cards_rank[1]) == 3:
-            return 500
+            return 10005000
 
         #szin flush
         elif my_cards_suit[0] == my_cards_suit[1] and community_cards_suit.count(my_cards_suit[0]) == 3:
