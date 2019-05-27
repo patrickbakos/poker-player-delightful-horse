@@ -14,6 +14,8 @@ class Player:
 
 
         my_cards = []
+        all_cards_rank = []
+        all_cards_suit = []
         ##translated_state = json.load(game_state)
 
 
@@ -21,6 +23,9 @@ class Player:
         my_index = game_state["in_action"]
         for card in game_state["players"][my_index]["hole_cards"]:
             my_cards.append(card["rank"])
+        for card in game_state["community_cards"]:
+            all_cards_rank.append(card["rank"])
+            all_cards_suit.append(card["suit"])
         if my_cards[0] == my_cards[1]:
             return 75
         else:
