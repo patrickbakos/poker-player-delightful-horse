@@ -2,7 +2,7 @@ import json
 
 
 class Player:
-    VERSION = "2.7"
+    VERSION = "2.9.5"
 
     def betRequest(self, game_state):
 
@@ -71,6 +71,8 @@ class Player:
                 return 500
             else:
                 return 75
+        elif game_state["round"] > 5:
+            return my_stack
         else:
             return 0
 
