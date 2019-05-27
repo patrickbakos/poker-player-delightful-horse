@@ -7,8 +7,9 @@ class Player:
     def betRequest(self, game_state):
         bets = []
 
-        for bet in game_state['players']['bet']:
-            bets.append(bet)
+        for i in range(0, 5):
+            for bet in game_state['players'][i]['bet']:
+                bets.append(bet)
 
 
 
