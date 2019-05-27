@@ -2,7 +2,7 @@ import json
 
 
 class Player:
-    VERSION = "2.6"
+    VERSION = "2.7"
 
     def betRequest(self, game_state):
 
@@ -37,17 +37,30 @@ class Player:
 
         #szin flush
         elif my_cards_suit[0] == my_cards_suit[1] and community_cards_suit.count(my_cards_suit[0]) == 3:
-            return 400
+            if len(community_cards_rank) == 5:
+                return 200000
+            else:
+                return 400
+
+        #drill
         elif my_cards_rank[0] == my_cards_rank[1]\
                 and my_cards_rank[0] in community_cards_rank \
                 and my_cards_rank[1] in community_cards_rank:
-            return 300
+            if len(community_cards_rank) == 5:
+                return 200000
+            else:
+                return 300
+
+
 
         #pair
         elif my_cards_rank[0] == my_cards_rank[1]\
                 or my_cards_rank[0] in community_cards_rank\
                 or my_cards_rank[1] in community_cards_rank:
-            return 75
+            if len(community_cards_rank) == 5:
+                return 800
+            else:
+                return 75
         else:
             return 10
 
