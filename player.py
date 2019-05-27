@@ -83,7 +83,7 @@ class Player:
                 or my_cards_rank[0] in community_cards_rank\
                 or my_cards_rank[1] in community_cards_rank:
             if len(community_cards_rank) == 5:
-                return 500
+                return 200
             else:
                 return 75
         elif game_state["round"] <= 2 and (my_cards_rank.count("A") == 2 or my_cards_rank.count("K") == 2):
