@@ -13,21 +13,23 @@ class Player:
 
 
 
-        my_cards = []
-        all_cards_rank = []
-        all_cards_suit = []
+        my_cards_rank = []
+        community_cards_rank = []
+        community_cards_suit = []
         ##translated_state = json.load(game_state)
 
 
 
         my_index = game_state["in_action"]
         for card in game_state["players"][my_index]["hole_cards"]:
-            my_cards.append(card["rank"])
+            my_cards_rank.append(card["rank"])
         for card in game_state["community_cards"]:
-            all_cards_rank.append(card["rank"])
-            all_cards_suit.append(card["suit"])
-        if my_cards[0] == my_cards[1]:
+            community_cards_rank.append(card["rank"])
+            community_cards_suit.append(card["suit"])
+        if my_cards_rank[0] == my_cards_rank[1] and my_cards_rank[0]:
             return 75
+        elif my_cards_rank[0] == my_cards_rank[1] and my_cards_rank[0] in community_cards_rank:
+            return 300
         else:
             return 10
 
