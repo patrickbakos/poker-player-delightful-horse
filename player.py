@@ -1,7 +1,7 @@
 import json
 
 class Player:
-    VERSION = "1.4"
+    VERSION = "1.4.000"
 
     def betRequest(self, game_state):
         my_cards = []
