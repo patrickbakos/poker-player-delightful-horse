@@ -36,9 +36,18 @@ class Player:
             or community_cards_rank.count(my_cards_rank[1]) == 3:
             return my_stack
 
+        #full
+        elif len(community_cards_rank) == 3 and len(set(all_cards_rank)) == 2:
+            return 500
+        elif len(community_cards_rank) == 4 and ((set(all_cards_rank) == 3 or set(all_cards_rank) == 2)):
+                return my_stack
+        elif len(community_cards_rank) == 5 and (len(set(all_cards_rank)) == 3 or len(set(all_cards_rank)) == 4 or len(set(all_cards_rank)) == 5):
+                return my_stack
+
+
         #szin flush
         elif my_cards_suit[0] == my_cards_suit[1] and community_cards_suit.count(my_cards_suit[0]) == 3:
-            if len(community_cards_rank) == 5 or len(community_cards_rank) == 5:
+            if len(community_cards_rank) == 5 or len(community_cards_rank) == 4:
                 return my_stack
             else:
                 return 400
