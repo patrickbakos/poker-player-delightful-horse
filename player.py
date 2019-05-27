@@ -6,8 +6,8 @@ class Player:
     def betRequest(self, game_state):
         my_cards = []
         translated_state = json.load(game_state)
-        my_index = game_state["in_action"]
-        for card in game_state["palyers"][my_index]["hole_cards"]:
+        my_index = translated_state["in_action"]
+        for card in translated_state["palyers"][my_index]["hole_cards"]:
             my_cards.append(card["rank"])
         last_elem = my_cards[0]
         for elem in my_cards:
