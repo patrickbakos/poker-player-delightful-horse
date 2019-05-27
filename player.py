@@ -30,8 +30,13 @@ class Player:
         all_cards_rank = my_cards_rank + community_cards_rank
         all_cards_suit = my_cards_suit + community_cards_suit
 
+
+        #big stack
+
+        if my_stack > 2999:
+            return my_stack
         #poker
-        if my_cards_rank[0] == my_cards_rank[1] and community_cards_rank.count(my_cards_rank[0]) == 2\
+        elif my_cards_rank[0] == my_cards_rank[1] and community_cards_rank.count(my_cards_rank[0]) == 2\
             or community_cards_rank.count(my_cards_rank[0]) == 3\
             or community_cards_rank.count(my_cards_rank[1]) == 3:
             return my_stack
