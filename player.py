@@ -68,11 +68,12 @@ class Player:
 
 
         #pair
-        elif my_cards_rank[0] == my_cards_rank[1]\
-                or my_cards_rank[0] in community_cards_rank\
-                or my_cards_rank[1] in community_cards_rank:
+        elif (my_cards_rank[0] == my_cards_rank[1] and (my_cards_rank[0] == "A" or my_cards_rank[0] == "K" or my_cards_rank[0] == "D" or my_cards_rank[0] == "J"))\
+                or (my_cards_rank[0] in community_cards_rank and (my_cards_rank[0] == "A" or my_cards_rank[0] == "K" or my_cards_rank[0] == "D" or my_cards_rank[0] == "J"))\
+                or (my_cards_rank[1] in community_cards_rank and (my_cards_rank[1] == "A" or my_cards_rank[1] == "K" or my_cards_rank[1] == "D" or my_cards_rank[1] == "J")):
             if len(community_cards_rank) == 5:
-                return 500
+                return my_stack
+
             else:
                 return 75
         elif game_state["round"] <= 5 and (my_cards_rank.count("A") == 2 or my_cards_rank.count("K") == 2):
