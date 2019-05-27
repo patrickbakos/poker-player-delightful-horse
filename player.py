@@ -26,7 +26,12 @@ class Player:
         for card in game_state["community_cards"]:
             community_cards_rank.append(card["rank"])
             community_cards_suit.append(card["suit"])
-        if my_cards_rank[0] == my_cards_rank[1]\
+        if my_cards_rank[0] == my_cards_rank[1] and community_cards_rank.count(my_cards_rank[0]) == 2\
+            or community_cards_rank.count(my_cards_rank[0]) == 3\
+            or community_cards_rank.count(my_cards_rank[1]) == 3:
+            return 500
+
+        elif my_cards_rank[0] == my_cards_rank[1]\
                 and my_cards_rank[0] in community_cards_rank \
                 and my_cards_rank[1] in community_cards_rank:
             return 300
