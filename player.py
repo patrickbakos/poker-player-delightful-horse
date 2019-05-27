@@ -4,20 +4,17 @@ import json
 class Player:
     VERSION = "1.8"
 
-    def betRequest(self, game_state):
-        ##bets = []
+    def check_for_drill(self, game_state):
 
-        ##for i in range(0, 5):
-        ##    for bet in game_state['players'][i]['bet']:
-        ##        bets.append(bet)
+    def betRequest(self, game_state):
+
+
 
 
 
         my_cards_rank = []
         community_cards_rank = []
         community_cards_suit = []
-        ##translated_state = json.load(game_state)
-
 
 
         my_index = game_state["in_action"]
@@ -26,15 +23,20 @@ class Player:
         for card in game_state["community_cards"]:
             community_cards_rank.append(card["rank"])
             community_cards_suit.append(card["suit"])
+
+        #poker
         if my_cards_rank[0] == my_cards_rank[1] and community_cards_rank.count(my_cards_rank[0]) == 2\
             or community_cards_rank.count(my_cards_rank[0]) == 3\
             or community_cards_rank.count(my_cards_rank[1]) == 3:
             return 500
 
+        #drill
         elif my_cards_rank[0] == my_cards_rank[1]\
                 and my_cards_rank[0] in community_cards_rank \
                 and my_cards_rank[1] in community_cards_rank:
             return 300
+
+        #pair
         elif my_cards_rank[0] == my_cards_rank[1]\
                 or my_cards_rank[0] in community_cards_rank\
                 or my_cards_rank[1] in community_cards_rank:
