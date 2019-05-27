@@ -83,7 +83,7 @@ class Player:
         elif game_state["round"] > 5 and "A" in my_cards_rank:
             return my_stack
         else:
-            return 0
+            return 50
 
     def showdown(self, game_state):
         pass
