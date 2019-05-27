@@ -67,7 +67,6 @@ class Player:
                 return 300
 
 
-
         #pair
         elif my_cards_rank[0] == my_cards_rank[1]\
                 or my_cards_rank[0] in community_cards_rank\
@@ -81,7 +80,7 @@ class Player:
         elif game_state["round"] <= 5:
             return 10
         elif game_state["round"] > 5 and "A" in my_cards_rank:
-            return 500
+            return my_stack
         else:
             return 50
 
