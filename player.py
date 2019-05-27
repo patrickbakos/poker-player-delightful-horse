@@ -27,13 +27,13 @@ class Player:
             community_cards_rank.append(card["rank"])
             community_cards_suit.append(card["suit"])
         if my_cards_rank[0] == my_cards_rank[1]\
-                or my_cards_rank[0] in community_cards_rank \
-                or my_cards_rank[1] in community_cards_rank:
-            return 75
+                and my_cards_rank[0] in community_cards_rank \
+                and my_cards_rank[1] in community_cards_rank:
+            return 300
         elif my_cards_rank[0] == my_cards_rank[1]\
                 or my_cards_rank[0] in community_cards_rank\
                 or my_cards_rank[1] in community_cards_rank:
-            return 300
+            return 75
         else:
             return 10
 
