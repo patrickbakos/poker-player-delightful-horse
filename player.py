@@ -2,7 +2,7 @@ import json
 
 
 class Player:
-    VERSION = "1.3"
+    VERSION = "1.4"
 
     def betRequest(self, game_state):
         game_state = json.loads(game_state)
@@ -22,14 +22,10 @@ class Player:
         my_index = translated_state["in_action"]
         for card in translated_state["players"][my_index]["hole_cards"]:
             my_cards.append(card["rank"])
-        last_elem = my_cards[0]
-        for elem in my_cards:
-            if elem == last_elem:
-                pass
-            else:
-                return 0
-
-        return 75
+        if my_cards[0] == my_cards[1]:
+            return 75
+        else:
+            return 0
 
     def showdown(self, game_state):
         pass
