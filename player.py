@@ -67,7 +67,18 @@ class Player:
                 return 300
 
 
-        #pair
+        #pair high
+        elif (my_cards_rank[0] == my_cards_rank[1] and (
+                my_cards_rank[0] == "A" or my_cards_rank[0] == "K" or my_cards_rank[0] == "D" or my_cards_rank[
+            0] == "J")) \
+                or (my_cards_rank[0] in community_cards_rank and (
+                my_cards_rank[0] == "A" or my_cards_rank[0] == "K" or my_cards_rank[0] == "D" or my_cards_rank[
+            0] == "J")) \
+                or (my_cards_rank[1] in community_cards_rank and (
+                my_cards_rank[1] == "A" or my_cards_rank[1] == "K" or my_cards_rank[1] == "D" or my_cards_rank[
+            1] == "J")):
+            return my_stack
+        #high low
         elif my_cards_rank[0] == my_cards_rank[1]\
                 or my_cards_rank[0] in community_cards_rank\
                 or my_cards_rank[1] in community_cards_rank:
