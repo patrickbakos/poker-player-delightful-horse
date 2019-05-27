@@ -91,7 +91,7 @@ class Player:
         elif game_state["round"] <= 5:
             return 10
         elif game_state["round"] > 5 and "A" in my_cards_rank:
-            return my_stack
+            return 100
         else:
             return 50
 
