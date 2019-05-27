@@ -86,7 +86,7 @@ class Player:
                 return 500
             else:
                 return 75
-        elif game_state["round"] <= 5 and (my_cards_rank.count("A") == 2 or my_cards_rank.count("K") == 2):
+        elif game_state["round"] <= 2 and (my_cards_rank.count("A") == 2 or my_cards_rank.count("K") == 2):
             return my_stack
         elif game_state["round"] <= 5:
             return 10
