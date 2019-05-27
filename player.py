@@ -24,7 +24,7 @@ class Player:
         if my_cards[0] == my_cards[1]:
             return my_pot
         else:
-            max_bet
+            return max_bet
 
     def showdown(self, game_state):
         pass
