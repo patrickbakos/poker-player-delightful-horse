@@ -17,8 +17,9 @@ class Player:
         all_cards_suit = []
         all_cards_rank = []
 
-
         my_index = game_state["in_action"]
+        my_stack = game_state["players"][my_index]["stack"]
+
         for card in game_state["players"][my_index]["hole_cards"]:
             my_cards_rank.append(card["rank"])
             my_cards_suit.append(card["suit"])
@@ -33,12 +34,12 @@ class Player:
         if my_cards_rank[0] == my_cards_rank[1] and community_cards_rank.count(my_cards_rank[0]) == 2\
             or community_cards_rank.count(my_cards_rank[0]) == 3\
             or community_cards_rank.count(my_cards_rank[1]) == 3:
-            return 10005000
+            return my_stack
 
         #szin flush
         elif my_cards_suit[0] == my_cards_suit[1] and community_cards_suit.count(my_cards_suit[0]) == 3:
             if len(community_cards_rank) == 5:
-                return 200000
+                return my_stack
             else:
                 return 400
 
@@ -47,7 +48,7 @@ class Player:
                 and my_cards_rank[0] in community_cards_rank \
                 and my_cards_rank[1] in community_cards_rank:
             if len(community_cards_rank) == 5:
-                return 200000
+                return my_stack
             else:
                 return 300
 
@@ -58,7 +59,7 @@ class Player:
                 or my_cards_rank[0] in community_cards_rank\
                 or my_cards_rank[1] in community_cards_rank:
             if len(community_cards_rank) == 5:
-                return 800
+                return 500
             else:
                 return 75
         else:
