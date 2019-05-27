@@ -2,7 +2,7 @@ import json
 
 
 class Player:
-    VERSION = "1.4"
+    VERSION = "1.4.000"
 
     def betRequest(self, game_state):
         game_state = json.loads(game_state)
@@ -18,9 +18,9 @@ class Player:
             return pot
 
         my_cards = []
-        translated_state = json.load(game_state)
-        my_index = translated_state["in_action"]
-        for card in translated_state["players"][my_index]["hole_cards"]:
+        ##translated_state = json.load(game_state)
+        my_index = game_state["in_action"]
+        for card in game_state["players"][my_index]["hole_cards"]:
             my_cards.append(card["rank"])
         if my_cards[0] == my_cards[1]:
             return 75
