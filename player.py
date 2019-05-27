@@ -38,7 +38,7 @@ class Player:
 
         #szin flush
         elif my_cards_suit[0] == my_cards_suit[1] and community_cards_suit.count(my_cards_suit[0]) == 3:
-            if len(community_cards_rank) == 5:
+            if len(community_cards_rank) == 5 or len(community_cards_rank) == 5:
                 return my_stack
             else:
                 return 400
