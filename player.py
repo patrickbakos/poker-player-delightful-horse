@@ -4,8 +4,6 @@ import json
 class Player:
     VERSION = "1.8"
 
-    def check_for_drill(self, game_state):
-
     def betRequest(self, game_state):
 
 
