@@ -72,7 +72,7 @@ class Player:
             else:
                 return 75
         else:
-            return 10
+            return 0
 
     def showdown(self, game_state):
         pass
