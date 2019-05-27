@@ -5,7 +5,6 @@ class Player:
     VERSION = "1.5,"
 
     def betRequest(self, game_state):
-        game_state = json.loads(game_state)
         bets = []
 
         for bet in game_state['players']['bet']:
