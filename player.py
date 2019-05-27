@@ -1,7 +1,7 @@
 import json
 
 class Player:
-    VERSION = "1.0"
+    VERSION = "1.2"
 
     def betRequest(self, game_state):
         my_cards = []
@@ -19,7 +19,7 @@ class Player:
             else:
                 return 0
 
-        return 100
+        return 75
 
     def showdown(self, game_state):
         pass
